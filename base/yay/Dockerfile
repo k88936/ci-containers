@@ -28,5 +28,6 @@ RUN pacman -S --noconfirm --needed \
         curl \
         zip \
         unzip \
-        which \
+        which 
+
 RUN pacman -Scc --noconfirm

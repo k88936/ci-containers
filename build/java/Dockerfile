@@ -10,10 +10,10 @@ RUN yay -Syy --noconfirm \
         jdk8-openjdk \
         maven \
         ca-certificates \
-    && archlinux-java status || true \
-    && archlinux-java set java-21-openjdk \
     && update-ca-trust \
     && yay -Scc --noconfirm
 USER root
+RUN  archlinux-java status || true \
+    && archlinux-java set java-21-openjdk \
 
   

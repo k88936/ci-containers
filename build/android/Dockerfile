@@ -16,8 +16,9 @@ RUN yay -Syy --noconfirm \
         android-sdk-platform-tools \
         android-tools \
         android-udev \
-    && archlinux-java status || true \
-    && archlinux-java set java-21-openjdk \
     && update-ca-trust \
     && yay -Scc --noconfirm
 USER root
+
+RUN  archlinux-java status || true \
+    && archlinux-java set java-21-openjdk \

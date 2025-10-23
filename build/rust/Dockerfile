@@ -1,5 +1,9 @@
 FROM kvtodev/ci-containers:builder-base
-RUN pacman -Syy --noconfirm \
-    && pacman -S --noconfirm rustup \
+
+USER yay
+WORKDIR /home/yay
+RUN yay -Syy --noconfirm \
+    && yay -S --noconfirm rustup \
     && rustup default stable \
-    && pacman -Scc --noconfirm
+    && yay -Scc --noconfirm
+USER root

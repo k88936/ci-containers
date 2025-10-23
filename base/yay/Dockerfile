@@ -21,4 +21,12 @@ RUN git clone https://aur.archlinux.org/yay-bin.git /home/yay/yay-bin \
 
 # Optional: clean pacman cache to reduce image size
 USER root
+
+RUN pacman -S --noconfirm --needed \
+        git \
+        wget \
+        curl \
+        zip \
+        unzip \
+        which \
 RUN pacman -Scc --noconfirm

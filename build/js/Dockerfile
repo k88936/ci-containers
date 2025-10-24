@@ -1,4 +1,4 @@
-FROM kvtodev/ci-containers:builder-base
+FROM kvtodev/ci-containers:base
 
 USER yay
 WORKDIR /home/yay

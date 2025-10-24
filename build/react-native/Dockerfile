@@ -8,7 +8,9 @@ RUN yay -Syy --noconfirm \
         maven \
         android-platform \
         android-ndk \
+        sdkmanager \
     && yay -Scc --noconfirm
 USER root
+RUN yes | sdkmanager --licenses
 
   

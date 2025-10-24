@@ -9,7 +9,6 @@ RUN yay -Syy --noconfirm \
         pnpm \
         bun \
 
-        vite \
         nodejs \
 
         typescript \

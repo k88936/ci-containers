@@ -7,12 +7,7 @@ RUN yay -Syy --noconfirm \
         npm \
         yarn \
         pnpm \
-
         nodejs \
-
-        typescript \
-        eslint \
-
     && yay -Scc --noconfirm
 USER root
 

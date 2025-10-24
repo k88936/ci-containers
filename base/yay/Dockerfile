@@ -12,19 +12,6 @@ RUN sed -i '1i Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/
     && pacman -Syyu --noconfirm \
     && pacman -S --noconfirm --needed sudo git which
 
-
-    
-RUN pacman -S --noconfirm --needed \
-        git \
-        wget \
-        curl \
-        zip \
-        unzip \
-        ca-certificates \
-        which 
-
-RUN update-ca-trust 
-
 # Create a passwordless sudo user: yay
 RUN useradd -m -G wheel -s /bin/bash yay \
     && echo '%wheel ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/99-wheel \
@@ -39,7 +26,14 @@ RUN git clone https://aur.archlinux.org/yay-bin.git /home/yay/yay-bin \
     && cd /home/yay \
     && rm -rf /home/yay/yay-bin
 
-# Optional: clean pacman cache to reduce image size
+RUN yay -S --noconfirm --needed \
+        git \
+        wget \
+        curl \
+        zip \
+        unzip \
+        ca-certificates \
+        which \
+    && yay -Scc --noconfirm
 USER root
-
-RUN pacman -Scc --noconfirm
+RUN update-ca-trust 

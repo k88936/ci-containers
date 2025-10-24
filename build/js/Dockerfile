@@ -7,7 +7,6 @@ RUN yay -Syy --noconfirm \
         npm \
         yarn \
         pnpm \
-        bun \
 
         nodejs \
 

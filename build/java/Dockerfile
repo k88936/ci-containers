@@ -9,8 +9,6 @@ RUN yay -Syy --noconfirm \
         jdk17-openjdk \
         jdk8-openjdk \
         maven \
-        ca-certificates \
-    && update-ca-trust \
     && yay -Scc --noconfirm
 USER root
 RUN  archlinux-java status || true \

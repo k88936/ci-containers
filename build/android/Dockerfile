@@ -9,14 +9,12 @@ RUN yay -Syy --noconfirm \
         jdk17-openjdk \
         jdk8-openjdk \
         maven \
-        ca-certificates \
         android-ndk \
         android-platform \
         android-sdk \
         android-sdk-platform-tools \
         android-tools \
         android-udev \
-    && update-ca-trust \
     && yay -Scc --noconfirm
 USER root
 

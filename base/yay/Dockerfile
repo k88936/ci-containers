@@ -20,7 +20,10 @@ RUN pacman -S --noconfirm --needed \
         curl \
         zip \
         unzip \
+        ca-certificates \
         which 
+
+RUN update-ca-trust 
 
 # Create a passwordless sudo user: yay
 RUN useradd -m -G wheel -s /bin/bash yay \

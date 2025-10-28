@@ -12,7 +12,6 @@ USER root
 
 RUN npm i -g @continuedev/cli
 
-RUN mkdir -p /root/.continue
-COPY config.yaml /root/.continue/config.yaml
+COPY config.yaml /root/config.yaml
 
   

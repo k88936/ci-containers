@@ -1,0 +1,35 @@
+name: MyProject
+version: 0.0.1
+schema: v1
+models:
+  - name: ai
+    provider: openai
+    model: ${{secrets.CONTINUE_MODEL_NAME}}
+    apiBase: ${{secrets.CONTINUE_API_BASE}}
+    apiKey: ${{secrets.CONTINUE_API_KEY}}
+    capabilities:
+      - tool_use
+    defaultCompletionOptions:
+      contextLength: ${{secrets.CONTINUE_CONTEXT_LENGTH}}
+
+context:
+  - provider: diff
+  - provider: file
+  - provider: code
+  - provider: terminal
+
+mcpServers:
+  - name: Memory
+    command: npx
+    args:
+      - "-y"
+      - "@modelcontextprotocol/server-memory"
+  - name: Filesystem
+    command: npx
+    args:
+      - "-y"
+      - "@modelcontextprotocol/server-filesystem"
+      - "."
+  - name: Context7 MCP
+    type: streamable-http
+    url: https://mcp.context7.com/mcp

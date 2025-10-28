@@ -1,16 +1,16 @@
-name: MyProject
-version: 0.0.1
+name: $CONTINUE_PROJECT_NAME
+version: $CONTINUE_PROJECT_VERSION
 schema: v1
 models:
   - name: ai
     provider: openai
-    model: ${{secrets.CONTINUE_MODEL_NAME}}
-    apiBase: ${{secrets.CONTINUE_API_BASE}}
-    apiKey: ${{secrets.CONTINUE_API_KEY}}
+    model: $CONTINUE_MODEL_NAME
+    apiBase: $CONTINUE_API_BASE
+    apiKey: $CONTINUE_API_KEY
     capabilities:
       - tool_use
     defaultCompletionOptions:
-      contextLength: ${{secrets.CONTINUE_CONTEXT_LENGTH}}
+      contextLength: $CONTINUE_CONTEXT_LENGTH
 
 context:
   - provider: diff

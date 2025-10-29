@@ -11,7 +11,3 @@ RUN yay -Syy --noconfirm \
 USER root
 
 RUN npm i -g @continuedev/cli
-
-COPY config.yaml /root/config.yaml
-
-  

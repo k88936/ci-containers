@@ -5,9 +5,9 @@ RUN yay -Syy --noconfirm \
     && yay -S --noconfirm --needed \
         jdk21-openjdk \
         maven \
-        android-platform \
-        android-ndk \
         sdkmanager \
     && yay -Scc --noconfirm
 USER root
-RUN yes | sdkmanager --licenses
+ENV ANDROID_SDK_ROOT=/opt/android-sdk
+ENV ANDROID_HOME=/opt/android-sdk
+RUN mkdir -p /opt/android-sdk/ && yes | sdkmanager --licenses

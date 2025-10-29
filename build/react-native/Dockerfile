@@ -10,4 +10,3 @@ RUN yay -Syy --noconfirm \
 USER root
 ENV ANDROID_SDK_ROOT=/opt/android-sdk
 ENV ANDROID_HOME=/opt/android-sdk
-RUN mkdir -p /opt/android-sdk/ && yes | sdkmanager --licenses

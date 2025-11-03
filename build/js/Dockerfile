@@ -7,6 +7,7 @@ RUN yay -Syy --noconfirm \
         npm \
         yarn \
         pnpm \
+        bun-bin \
         nodejs \
     && yay -Scc --noconfirm
 USER root

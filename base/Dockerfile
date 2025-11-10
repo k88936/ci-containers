@@ -40,8 +40,8 @@ RUN yay -S --noconfirm --needed \
         which \
         python \
         python-pip \
+        uv \
     && yay -Scc --noconfirm
+
 USER root
-RUN curl -LsSf https://astral.sh/uv/install.sh \
-    | env UV_INSTALL_DIR="/usr/local/bin" UV_NO_MODIFY_PATH=1 sh
 RUN update-ca-trust 

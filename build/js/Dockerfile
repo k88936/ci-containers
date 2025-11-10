@@ -9,7 +9,6 @@ RUN yay -Syy --noconfirm \
         bun-bin \
         nodejs \
         eslint \
-        tslint \
         typescript \
     && yay -Scc --noconfirm
 USER root

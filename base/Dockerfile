@@ -24,7 +24,6 @@ RUN useradd -m -G wheel -s /bin/bash yay \
 
 # Build and install the AUR helper 'yay' (use binary package for faster builds)
 USER yay
-WORKDIR /home/yay
 RUN git clone https://aur.archlinux.org/yay-bin.git /home/yay/yay-bin \
     && cd /home/yay/yay-bin \
     && makepkg -si --noconfirm --needed \
@@ -39,6 +38,10 @@ RUN yay -S --noconfirm --needed \
         unzip \
         ca-certificates \
         which \
+        python \
+        python-pip \
     && yay -Scc --noconfirm
 USER root
+RUN curl -LsSf https://astral.sh/uv/install.sh \
+    | env UV_INSTALL_DIR="/usr/local/bin" UV_NO_MODIFY_PATH=1 sh
 RUN update-ca-trust 

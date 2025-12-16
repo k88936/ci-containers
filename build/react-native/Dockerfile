@@ -7,8 +7,7 @@ RUN yay -Syy --noconfirm \
         sdkmanager \
     && yay -Scc --noconfirm
 USER root
-npm i -g react-native-cli
-npm i -g expo-cli
+RUN npm install --global react-native-cli expo-cli
 
 ENV ANDROID_SDK_ROOT=/opt/android-sdk
 ENV ANDROID_HOME=/opt/android-sdk

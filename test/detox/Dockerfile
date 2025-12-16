@@ -4,3 +4,5 @@ RUN yay -Syy --noconfirm \
         libx11 \
     && yay -Scc --noconfirm
 RUN npm install --global detox-cli
+
+ENV ANDROID_AVD_HOME="/avd/"

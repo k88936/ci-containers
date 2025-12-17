@@ -11,3 +11,4 @@ RUN npm install --global react-native-cli expo-cli
 
 ENV ANDROID_SDK_ROOT=/android-sdk
 ENV ANDROID_HOME=/android-sdk
+ENV PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$PATH"

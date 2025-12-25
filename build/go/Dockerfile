@@ -6,3 +6,5 @@ RUN yay -Syy --noconfirm \
         go \
     && yay -Scc --noconfirm
 USER root
+
+ENV GOPATH=/go

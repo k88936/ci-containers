@@ -55,5 +55,5 @@ unset https_proxy
 unset NO_PROXY
 unset no_proxy
 unset GRADLE_OPTS
-EOF \
-    && chmod +x /unset-proxy.sh
+EOF
+RUN chmod +x /unset-proxy.sh

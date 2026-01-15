@@ -46,14 +46,5 @@ RUN yay -S --noconfirm --needed \
 USER root
 RUN update-ca-trust 
 
-RUN cat <<'EOF' > /unset-proxy.sh
-#!/bin/bash
-unset HTTP_PROXY
-unset HTTPS_PROXY
-unset http_proxy
-unset https_proxy
-unset NO_PROXY
-unset no_proxy
-unset GRADLE_OPTS
-EOF
+COPY unset-proxy.sh /unset-proxy.sh
 RUN chmod +x /unset-proxy.sh

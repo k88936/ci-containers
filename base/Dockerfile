@@ -12,7 +12,9 @@ ENV HTTP_PROXY="${proxy_scheme}://${proxy_host}:${proxy_port}" \
     no_proxy="localhost,127.0.0.1,::1,.local" \
     GRADLE_OPTS="-Dhttp.proxyHost=${proxy_host} -Dhttp.proxyPort=${proxy_port} -Dhttps.proxyHost=${proxy_host} -Dhttps.proxyPort=${proxy_port} -Dhttp.nonProxyHosts='localhost|127.0.0.1|::1|${proxy_host}|*.local' -Dhttps.protocols=TLSv1.2,TLSv1.3"
 
-# Use a fast mirror (Tsinghua) and refresh package databases
+COPY unset-proxy.sh /unset-proxy.sh
+RUN chmod +x /unset-proxy.sh
+
 RUN sed -i '1i Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch' /etc/pacman.d/mirrorlist \
     && pacman -Syyu --noconfirm \
     && pacman -S --noconfirm --needed sudo git which
@@ -46,6 +48,3 @@ RUN yay -S --noconfirm --needed \
 
 USER root
 RUN update-ca-trust 
-
-COPY unset-proxy.sh /unset-proxy.sh
-RUN chmod +x /unset-proxy.sh

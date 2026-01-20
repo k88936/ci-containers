@@ -35,16 +35,6 @@ RUN git clone https://aur.archlinux.org/yay-bin.git /home/yay/yay-bin \
 RUN yay -S --noconfirm --needed \
         git \
         openssh \
-        wget \
-        curl \
-        zip \
-        unzip \
-        ca-certificates \
-        which \
-        python \
-        python-pip \
-        uv \
     && yay -Scc --noconfirm
 
 USER root
-RUN update-ca-trust 

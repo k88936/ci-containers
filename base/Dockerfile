@@ -32,6 +32,7 @@ RUN git clone https://aur.archlinux.org/yay-bin.git /home/yay/yay-bin \
 
 RUN yay -S --noconfirm --needed \
         git \
+        openssh \
         wget \
         curl \
         zip \

@@ -5,8 +5,7 @@ RUN yay -Syy --noconfirm \
         sdkmanager \
     && yay -Scc --noconfirm
 USER root
-RUN  archlinux-java status || true \
-    && archlinux-java set java-21-openjdk \
+RUN archlinux-java set java-21-openjdk
 
 ENV ANDROID_HOME=/android-sdk
 ENV PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$PATH"

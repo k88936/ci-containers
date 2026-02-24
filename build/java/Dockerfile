@@ -10,7 +10,6 @@ RUN yay -Syy --noconfirm \
         maven \
     && yay -Scc --noconfirm
 USER root
-RUN  archlinux-java status || true \
-    && archlinux-java set java-21-openjdk \
+RUN  archlinux-java set java-21-openjdk
 
   

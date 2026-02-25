@@ -11,3 +11,6 @@ RUN yay -Syy --noconfirm \
     && yay -Scc --noconfirm
 USER root
 RUN  archlinux-java set java-21-openjdk
+
+RUN echo "mkdir -p /cache/m2 && ln -s /cache/m2 /root/.m2" >> /cache.sh
+RUN echo "mkdir -p /cache/gradle && ln -s /cache/gradle /root/.gradle" >> /cache.sh

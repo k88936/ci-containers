@@ -7,4 +7,4 @@ RUN yay -Syy --noconfirm \
 USER root
 RUN rustup default stable
 
-RUN mkdir -p /cache/rust && ln -s /cache/rust /root/.cargo
+RUN echo "mkdir -p /cache/rust && ln -s /cache/rust /root/.cargo" >> /cache.sh

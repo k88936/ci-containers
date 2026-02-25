@@ -24,6 +24,8 @@ RUN yay -S --noconfirm --needed \
 
 USER root
 
+RUN echo "mkdir -p /cache" >> /cache.sh && chmod +x /cache.sh
+
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]

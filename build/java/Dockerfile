@@ -11,4 +11,3 @@ RUN yay -Syy --noconfirm \
     && yay -Scc --noconfirm
 USER root
 RUN  archlinux-java set java-21-openjdk
-

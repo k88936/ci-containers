@@ -13,8 +13,7 @@ RUN yay -Syy --noconfirm \
     && yay -Scc --noconfirm
 USER root
 
-  
-RUN mkdir -p /cache/npm && ln -s /cache/npm /root/.npm
-RUN mkdir -p /cache/bun && ln -s /cache/npm /root/.bun
-RUN mkdir -p /cache/pnpm && ln -s /cache/pnpm /root/.local/share/pnpm/
-RUN mkdir -p /cache/yarn && ln -s /usr/local/share/.cache/yarn/
+RUN echo "mkdir -p /cache/npm && ln -s /cache/npm /root/.npm" >> /cache.sh
+RUN echo "mkdir -p /cache/bun && ln -s /cache/npm /root/.bun" >> /cache.sh
+RUN echo "mkdir -p /cache/pnpm /root/.local/share/ && ln -s /cache/pnpm /root/.local/share/pnpm/" >> /cache.sh
+RUN echo "mkdir -p /cache/yarn /usr/local/share/.cache/ && ln -s /usr/local/share/.cache/yarn/" >> /cache.sh

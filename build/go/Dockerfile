@@ -7,4 +7,4 @@ RUN yay -Syy --noconfirm \
     && yay -Scc --noconfirm
 USER root
 
-ENV GOPATH=/go
+ENV GOPATH=/cache/go

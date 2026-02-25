@@ -6,3 +6,5 @@ RUN yay -Syy --noconfirm \
     && yay -Scc --noconfirm
 USER root
 RUN rustup default stable
+
+RUN mkdir -p /cache/rust && ln -s /cache/rust /root/.cargo
